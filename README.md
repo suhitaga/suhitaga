@@ -1,4 +1,4 @@
-### Hi there 👋
+# Hi there 👋
 ## 🔭 I’m currently working on:
 1️⃣ Voc-AB: a solution to learning vocabulary
 2️⃣ The Code Café: a not-for-profit organization to introduce students in school to Computer Science
