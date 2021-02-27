@@ -2,11 +2,11 @@
 ## 🔭 I’m currently working on:
 #### 1️⃣ Voc-AB: a solution to learning vocabulary
 #### 2️⃣ The Code Café: a not-for-profit organization to introduce students in school to Computer Science
-#### 3️⃣ My portfolio website
+#### 3️⃣ A video chat platform to watch videos in sync.
 
 ## 🌱 I’m currently learning:
-#### 1️⃣ Phaser.js
-#### 2️⃣ Nodejs
+#### 1️⃣ node.js
+#### 2️⃣ three.js
 #### 3️⃣ Python integration with websites
 
 ## 📫 How to reach me:
