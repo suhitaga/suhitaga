@@ -1,13 +1,13 @@
 # Hi there 👋
 ## 🔭 I’m currently working on:
-#### 1️⃣ Voc-AB: a solution to learning vocabulary
-#### 2️⃣ The Code Café: a not-for-profit organization to introduce students in school to Computer Science
-#### 3️⃣ A video chat platform to watch videos in sync.
+#### 1️⃣ [HackSC](https://hacksc.com)
+#### 2️⃣ A habit tracker app
+#### 3️⃣ my ✨design✨ skills
 
-## 🌱 I’m currently learning:
-#### 1️⃣ node.js
-#### 2️⃣ three.js
-#### 3️⃣ Python integration with websites
+## 🌱 I’m currently working with:
+#### 1️⃣ Next.js
+#### 2️⃣ Flutter
+#### 3️⃣ Content APIs
 
 ## 📫 How to reach me:
 email me at -> suhitagarwal@gmail.com
