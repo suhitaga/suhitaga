@@ -1,12 +1,12 @@
 # Hi there 👋
 ## 🔭 I’m currently working on:
-#### 1️⃣ [HackSC](https://hacksc.com)
-#### 2️⃣ A habit tracker app
+#### 1️⃣ A super app
+#### 2️⃣ [HackSC](https://hacksc.com)
 #### 3️⃣ my ✨design✨ skills
 
 ## 🌱 I’m currently working with:
-#### 1️⃣ Next.js
-#### 2️⃣ Flutter
+#### 1️⃣ Flutter
+#### 2️⃣ Next.js
 #### 3️⃣ Content APIs
 
 ## 📫 How to reach me:
