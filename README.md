@@ -1,7 +1,7 @@
 # Hi there 👋
 ## 🔭 I’m currently working on:
-#### 1️⃣ A super app
-#### 2️⃣ [HackSC](https://hacksc.com)
+#### 1️⃣ AI Toys! (at [Curio](heycurio.com))
+#### 2️⃣ better coding practices
 #### 3️⃣ my ✨design✨ skills
 
 ## 🌱 I’m currently working with:
