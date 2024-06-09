@@ -10,4 +10,4 @@
 #### 3️⃣ Local Content APIs
 
 ## 📫 How to reach me:
-email me at -> suhitagarwal@gmail.com
+email me at -> suhit@suhit.me
