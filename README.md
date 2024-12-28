@@ -6,8 +6,8 @@
 
 ## 🌱 I’m currently working with:
 #### 1️⃣ React Native
-#### 2️⃣ Svelte+Tauri
-#### 3️⃣ Local Content APIs
+#### 2️⃣ Server-rendered Components
+#### 3️⃣ Local First APIs
 
 ## 📫 How to reach me:
 email me at -> suhit@suhit.me
