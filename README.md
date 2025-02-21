@@ -1,13 +1,13 @@
-# Hi there 👋
-## 🔭 I’m currently working on:
-#### 1️⃣ AI Toys! (at [Curio](heycurio.com))
+# hey there :)
+## 🔭 i’m currently working on:
+#### 1️⃣ ai toys! (at [curio](heycurio.com))
 #### 2️⃣ better coding practices
 #### 3️⃣ my design skills
 
-## 🌱 I’m currently working with:
-#### 1️⃣ React Native
-#### 2️⃣ Server-rendered Components
-#### 3️⃣ Functional Programming
+## 🌱 i’m currently working with:
+#### 1️⃣ react native
+#### 2️⃣ server-rendered Components
+#### 3️⃣ functional programming
 
-## 📫 How to reach me:
+## 📫 how to reach me:
 email me at -> suhit@suhit.me
