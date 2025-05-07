@@ -10,4 +10,4 @@
 #### 3️⃣ functional programming
 
 ## 📫 how to reach me:
-email me at -> suhit@suhit.me
+email me at → suhit@suhit.me
