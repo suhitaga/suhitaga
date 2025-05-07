@@ -1,4 +1,4 @@
-# hey there :)
+# hey there ツ
 ## 🔭 i’m currently working on:
 #### 1️⃣ ai toys! (at [curio](heycurio.com))
 #### 2️⃣ better coding practices
