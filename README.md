@@ -1,6 +1,6 @@
 # hey there ツ
 ## 🔭 i’m currently working on:
-#### 1️⃣ spreadsheets! (at [trufflepig 🐽](https://trufflepig.ai/))
+#### 1️⃣ 12 apps in 12 months
 #### 2️⃣ better coding practices
 #### 3️⃣ my design skills
 
