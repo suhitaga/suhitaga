@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Kode Mono', monospace;
+	font-size: 18px;
+	background: oklch(28% 0.02 70);
+	color: oklch(96% 0.01 90);
+	line-height: 1.6;
+}
+
+a {
+	color: oklch(87% 0.17 85);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+::selection {
+	background: var(--accent, oklch(87% 0.17 85));
+	color: oklch(28% 0.02 70);
+}
