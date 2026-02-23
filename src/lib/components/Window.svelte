@@ -57,3 +57,22 @@
     <slot />
   </div>
 </div>
+
+<style>
+  .window {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform-origin: var(--fold-target-x, 68px) var(--fold-target-y, 80px);
+    transition: transform 0.35s ease-out, opacity 0.3s ease-out;
+  }
+
+  .window.minimized {
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>

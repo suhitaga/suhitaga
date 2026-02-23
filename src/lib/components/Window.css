@@ -1,42 +1,18 @@
-.window {
-	--window-bg: oklch(28% 0.02 70);
-	--window-border: oklch(40% 0.02 70);
-	--title-bg: oklch(32% 0.02 70);
-	--title-text: oklch(96% 0.01 90);
-	--control-hover: oklch(45% 0.02 70);
-
-	position: fixed;
-	inset: 0;
-	background: var(--window-bg);
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	transition:
-		transform 0.4s ease-out,
-		opacity 0.3s ease-out;
-}
-
-.window.minimized {
-	transform: scale(0.1) translateY(100vh);
-	opacity: 0;
-	pointer-events: none;
-}
-
 .title-bar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 8px 12px;
-	background: var(--title-bg);
-	border-bottom: 1px solid var(--window-border);
+	background: var(--bg-elevated);
+	border-bottom: 1px solid var(--border);
 	cursor: default;
 	user-select: none;
 }
 
 .title {
-	font-family: 'Kode Mono', monospace;
+	font-family: 'Monaspace Krypton', monospace;
 	font-size: 14px;
-	color: var(--title-text);
+	color: var(--text-primary);
 	line-height: normal;
 	text-box-trim: both;
 	text-box-edge: cap alphabetic;
@@ -53,12 +29,13 @@
 	border: none;
 	border-radius: 4px;
 	background: transparent;
-	color: var(--title-text);
+	color: var(--text-primary);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: background 0.15s ease;
+	font-family: inherit;
 }
 
 .control:hover {
@@ -71,8 +48,8 @@
 	padding: 8px;
 	display: flex;
 	justify-content: center;
-	scrollbar-width: thin; /* Firefox */
-	scrollbar-color: oklch(50% 0.02 70) transparent; /* thumb track */
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar) transparent;
 }
 
 .window-content::-webkit-scrollbar {
@@ -84,10 +61,10 @@
 }
 
 .window-content::-webkit-scrollbar-thumb {
-	background: oklch(50% 0.02 70);
+	background: var(--scrollbar);
 	border-radius: 4px;
 }
 
 .window-content::-webkit-scrollbar-thumb:hover {
-	background: oklch(60% 0.02 70);
+	background: var(--scrollbar-hover);
 }

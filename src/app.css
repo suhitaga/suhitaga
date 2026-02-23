@@ -1,7 +1,54 @@
+@font-face {
+	font-family: 'Monaspace Krypton';
+	src: url('/fonts/MonaspaceKrypton.woff2') format('woff2');
+	font-weight: 200 800;
+	font-style: normal;
+	font-display: swap;
+}
+
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+:root {
+	/* Dark mode (default) */
+	--bg-primary: oklch(28% 0.02 70);
+	--bg-secondary: oklch(24% 0.02 70);
+	--bg-elevated: oklch(32% 0.02 70);
+	--text-primary: oklch(96% 0.01 90);
+	--text-secondary: oklch(92% 0.01 90);
+	--text-muted: oklch(70% 0.01 90);
+	--border: oklch(40% 0.02 70);
+	--border-subtle: oklch(38% 0.02 70);
+	--scrollbar: oklch(50% 0.02 70);
+	--scrollbar-hover: oklch(60% 0.02 70);
+	--control-hover: oklch(45% 0.02 70);
+
+	/* Accents (shared) */
+	--accent-yellow: oklch(87% 0.17 85);
+	--accent-orange: oklch(70% 0.20 45);
+	--accent-purple: oklch(72% 0.15 300);
+	--accent-blue: oklch(62% 0.18 255);
+	--accent-green: oklch(68% 0.16 165);
+	--accent-amber: oklch(75% 0.16 70);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg-primary: oklch(95% 0.02 80);
+		--bg-secondary: oklch(91% 0.025 75);
+		--bg-elevated: oklch(98% 0.015 85);
+		--text-primary: oklch(25% 0.02 70);
+		--text-secondary: oklch(35% 0.02 70);
+		--text-muted: oklch(50% 0.02 70);
+		--border: oklch(80% 0.02 75);
+		--border-subtle: oklch(85% 0.02 75);
+		--scrollbar: oklch(70% 0.02 75);
+		--scrollbar-hover: oklch(60% 0.02 75);
+		--control-hover: oklch(88% 0.02 80);
+	}
 }
 
 html,
@@ -13,15 +60,16 @@ body {
 }
 
 body {
-	font-family: 'Kode Mono', monospace;
+	font-family: 'Monaspace Krypton', monospace;
 	font-size: 18px;
-	background: oklch(28% 0.02 70);
-	color: oklch(96% 0.01 90);
+	font-feature-settings: 'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'cv02';
+	background: var(--bg-primary);
+	color: var(--text-primary);
 	line-height: 1.6;
 }
 
 a {
-	color: oklch(87% 0.17 85);
+	color: var(--accent-yellow);
 	text-decoration: none;
 }
 
@@ -30,6 +78,6 @@ a:hover {
 }
 
 ::selection {
-	background: var(--accent, oklch(87% 0.17 85));
-	color: oklch(28% 0.02 70);
+	background: var(--accent, var(--accent-yellow));
+	color: var(--bg-primary);
 }

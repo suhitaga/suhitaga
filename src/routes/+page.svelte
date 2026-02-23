@@ -1,6 +1,7 @@
 <script lang="ts">
   import Window from "$lib/components/Window.svelte";
   import Resume from "$lib/components/Resume.svelte";
+  import Desktop from "$lib/components/Desktop.svelte";
   import { appState } from "$lib/stores/appState";
 
   function handleMinimize() {
@@ -10,7 +11,7 @@
 
 <svelte:head>
   <!-- Primary -->
-  <title>Suhit Agarwal — Developer & Designer</title>
+  <title>Suhit Agarwal | Developer & Designer</title>
   <meta
     name="description"
     content="Suhit Agarwal is a developer and designer building delightful interfaces. Currently working on modular electronics, previously at Curio and USC."
@@ -67,8 +68,10 @@
 </svelte:head>
 
 <main>
+  <Desktop />
+
   <Window
-    title="Resume.md"
+    title="resume.md"
     isMinimized={$appState.windows.resume.isMinimized}
     onminimize={handleMinimize}
   >

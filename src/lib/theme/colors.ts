@@ -16,20 +16,29 @@
 export type OklchColor = [number, number, number];
 
 export const colors = {
-	// Backgrounds
-	bg: {
-		primary: [0.28, 0.02, 70] as OklchColor,
-		secondary: [0.24, 0.02, 70] as OklchColor,
+	dark: {
+		bg: {
+			primary: [0.28, 0.02, 70] as OklchColor,
+			secondary: [0.24, 0.02, 70] as OklchColor,
+		},
+		text: {
+			primary: [0.96, 0.01, 90] as OklchColor,
+			secondary: [0.92, 0.01, 90] as OklchColor,
+			muted: [0.70, 0.01, 90] as OklchColor,
+		},
 	},
-
-	// Text
-	text: {
-		primary: [0.96, 0.01, 90] as OklchColor,
-		secondary: [0.92, 0.01, 90] as OklchColor,
-		muted: [0.70, 0.01, 90] as OklchColor,
+	light: {
+		bg: {
+			primary: [0.95, 0.02, 80] as OklchColor,    // warm cream
+			secondary: [0.91, 0.025, 75] as OklchColor, // slightly darker cream
+		},
+		text: {
+			primary: [0.25, 0.02, 70] as OklchColor,
+			secondary: [0.35, 0.02, 70] as OklchColor,
+			muted: [0.50, 0.02, 70] as OklchColor,
+		},
 	},
-
-	// Accent palette (6 colors for header animations)
+	// Accent palette (shared between themes)
 	accent: {
 		yellow: [0.87, 0.17, 85] as OklchColor,
 		orange: [0.70, 0.20, 45] as OklchColor,

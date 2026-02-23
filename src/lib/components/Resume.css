@@ -18,7 +18,7 @@
 }
 
 .cell {
-	background: oklch(32% 0.02 70);
+	background: var(--bg-elevated);
 	border-radius: 2px;
 	padding: 12px;
 	overflow: hidden;
@@ -85,7 +85,7 @@
 .section-header {
 	margin-bottom: 8px;
 	padding-bottom: 4px;
-	border-bottom: 1px solid oklch(40% 0.02 70);
+	border-bottom: 1px solid var(--border);
 }
 
 .section-header :global(.scattered-header) {
@@ -125,7 +125,7 @@
 }
 
 .cell::-webkit-scrollbar-thumb {
-	background: oklch(45% 0.02 70);
+	background: var(--scrollbar);
 	border-radius: 2px;
 }
 

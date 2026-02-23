@@ -33,7 +33,7 @@
 	font-family: 'Bungee Shade', sans-serif;
 	font-weight: 400;
 	font-size: 36px;
-	color: oklch(87% 0.17 85);
+	color: var(--accent-yellow);
 	transition: color 0.3s ease-out;
 }
 
