@@ -27,13 +27,14 @@
 	--control-hover: oklch(45% 0.02 70);
 
 	/* Monitor frame */
-	--bezel-color: oklch(15% 0.01 70);
-	--bezel-x: clamp(24px, 4vmin, 48px);
-	--bezel-top: clamp(12px, 2vmin, 24px);
-	--bezel-bottom: clamp(36px, 6vmin, 72px);
-	--screen-radius: clamp(4px, 0.8vmin, 10px);
+	--bezel-color: oklch(20% 0.01 70);
+	--bezel-x: clamp(16px, 2.5vmin, 30px);
+	--bezel-bottom: clamp(48px, 8vmin, 96px);
+	--power-button-bg: oklch(32% 0.01 70);
+	--screen-radius: 8px;
 	--power-color: oklch(68% 0.16 165);
 	--power-glow: oklch(68% 0.16 165 / 0.4);
+	--power-outline: oklch(24% 0.01 70);
 
 	/* Accents (shared) */
 	--accent-yellow: oklch(87% 0.17 85);
@@ -59,7 +60,9 @@
 		--control-hover: oklch(88% 0.02 80);
 		--bezel-color: oklch(82% 0.04 75);
 		--power-color: oklch(70% 0.20 45);
+		--power-button-bg: oklch(72% 0.03 75);
 		--power-glow: oklch(70% 0.20 45 / 0.4);
+		--power-outline: oklch(79% 0.03 75);
 	}
 }
 
