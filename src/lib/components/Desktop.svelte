@@ -1,17 +1,8 @@
 <script lang="ts">
   import DesktopIcon from "./DesktopIcon.svelte";
   import { appState, monitorRevealed } from "$lib/stores/appState";
-  import {
-    FileMd,
-    Folder,
-    FolderOpen,
-    Trash,
-    Gear,
-    MusicNotes,
-    Notebook,
-  } from "phosphor-svelte";
+  import { FileMd } from "phosphor-svelte";
 
-  let projectsOpen = $state(false);
   let resumeIconEl: HTMLElement | null = $state(null);
   let desktopEl: HTMLElement | null = $state(null);
 
@@ -51,30 +42,7 @@
     appState.goToResume();
   }
 
-  function openSettings() {
-    // TODO: open settings window
-    console.log("Settings clicked");
-  }
 
-  function openProjects() {
-    projectsOpen = !projectsOpen;
-    // TODO: open projects window
-  }
-
-  function openTrash() {
-    // TODO: open trash
-    console.log("Trash clicked");
-  }
-
-  function openMusic() {
-    // TODO: open music player
-    console.log("Music clicked");
-  }
-
-  function openNotebook() {
-    // TODO: open notebook/blog
-    console.log("Notebook clicked");
-  }
 </script>
 
 <div class="desktop" bind:this={desktopEl}>
@@ -85,15 +53,6 @@
       onclick={openResume}
       bind={(el) => (resumeIconEl = el)}
     />
-    <DesktopIcon
-      label="Projects"
-      icon={projectsOpen ? FolderOpen : Folder}
-      onclick={openProjects}
-    />
-    <DesktopIcon label="Notebook" icon={Notebook} onclick={openNotebook} />
-    <DesktopIcon label="Music" icon={MusicNotes} onclick={openMusic} />
-    <DesktopIcon label="Settings" icon={Gear} onclick={openSettings} />
-    <DesktopIcon label="Trash" icon={Trash} onclick={openTrash} />
   </div>
 </div>
 
