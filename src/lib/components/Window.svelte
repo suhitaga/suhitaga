@@ -1,33 +1,36 @@
 <script lang="ts">
   import { X, Minus } from "phosphor-svelte";
+  import type { Snippet } from "svelte";
   import "./Window.css";
 
-  export let title: string = "Window";
-  export let isMinimized: boolean = false;
-  export let showClose: boolean = false;
-  export let zIndex: number = 1;
-  export let onminimize: (() => void) | undefined = undefined;
-  export let onclose: (() => void) | undefined = undefined;
-  export let onfocus: (() => void) | undefined = undefined;
-
-  function handleMinimize() {
-    onminimize?.();
+  interface Props {
+    title?: string;
+    isMinimized?: boolean;
+    showClose?: boolean;
+    zIndex?: number;
+    onminimize?: () => void;
+    onclose?: () => void;
+    onfocus?: () => void;
+    children?: Snippet;
   }
 
-  function handleClose() {
-    onclose?.();
-  }
-
-  function handleFocus() {
-    onfocus?.();
-  }
+  let {
+    title = "Window",
+    isMinimized = false,
+    showClose = false,
+    zIndex = 1,
+    onminimize,
+    onclose,
+    onfocus,
+    children,
+  }: Props = $props();
 </script>
 
 <div
   class="window"
   class:minimized={isMinimized}
   style:z-index={zIndex}
-  on:mousedown={handleFocus}
+  onmousedown={onfocus}
   role="dialog"
   aria-label={title}
   tabindex="-1"
@@ -38,7 +41,7 @@
       {#if showClose}
         <button
           class="control close"
-          on:click={handleClose}
+          onclick={onclose}
           aria-label="Close window"
         >
           <X size={16} weight="bold" />
@@ -46,7 +49,7 @@
       {/if}
       <button
         class="control minimize"
-        on:click={handleMinimize}
+        onclick={onminimize}
         aria-label="Minimize window"
       >
         <Minus size={16} weight="bold" />
@@ -54,20 +57,24 @@
     </div>
   </header>
   <div class="window-content">
-    <slot />
+    {#if children}
+      {@render children()}
+    {/if}
   </div>
 </div>
 
 <style>
   .window {
-    position: fixed;
+    position: absolute;
     inset: 0;
     background: var(--bg-primary);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transform-origin: var(--fold-target-x, 68px) var(--fold-target-y, 80px);
-    transition: transform 0.35s ease-out, opacity 0.3s ease-out;
+    transition:
+      transform 0.35s ease-out,
+      opacity 0.3s ease-out;
   }
 
   .window.minimized {

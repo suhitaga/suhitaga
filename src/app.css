@@ -26,6 +26,15 @@
 	--scrollbar-hover: oklch(60% 0.02 70);
 	--control-hover: oklch(45% 0.02 70);
 
+	/* Monitor frame */
+	--bezel-color: oklch(15% 0.01 70);
+	--bezel-x: clamp(24px, 4vmin, 48px);
+	--bezel-top: clamp(12px, 2vmin, 24px);
+	--bezel-bottom: clamp(36px, 6vmin, 72px);
+	--screen-radius: clamp(4px, 0.8vmin, 10px);
+	--power-color: oklch(68% 0.16 165);
+	--power-glow: oklch(68% 0.16 165 / 0.4);
+
 	/* Accents (shared) */
 	--accent-yellow: oklch(87% 0.17 85);
 	--accent-orange: oklch(70% 0.20 45);
@@ -48,6 +57,9 @@
 		--scrollbar: oklch(70% 0.02 75);
 		--scrollbar-hover: oklch(60% 0.02 75);
 		--control-hover: oklch(88% 0.02 80);
+		--bezel-color: oklch(82% 0.04 75);
+		--power-color: oklch(70% 0.20 45);
+		--power-glow: oklch(70% 0.20 45 / 0.4);
 	}
 }
 

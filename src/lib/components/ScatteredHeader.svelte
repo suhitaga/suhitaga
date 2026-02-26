@@ -6,7 +6,8 @@
   export let text: string;
   export let isName: boolean = false;
   export let palette: number = 0;
-  export let onpalettechange: ((palette: number) => void) | undefined = undefined;
+  export let onpalettechange: ((palette: number) => void) | undefined =
+    undefined;
 
   // Palette names matching CSS @font-palette-values
   const paletteNames = ["yellow", "green", "blue", "purple", "warm"];

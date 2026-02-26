@@ -2,6 +2,7 @@
   import Window from "$lib/components/Window.svelte";
   import Resume from "$lib/components/Resume.svelte";
   import Desktop from "$lib/components/Desktop.svelte";
+  import MonitorFrame from "$lib/components/MonitorFrame.svelte";
   import { appState } from "$lib/stores/appState";
 
   function handleMinimize() {
@@ -68,13 +69,15 @@
 </svelte:head>
 
 <main>
-  <Desktop />
+  <MonitorFrame>
+    <Desktop />
 
-  <Window
-    title="resume.md"
-    isMinimized={$appState.windows.resume.isMinimized}
-    onminimize={handleMinimize}
-  >
-    <Resume />
-  </Window>
+    <Window
+      title="resume.md"
+      isMinimized={$appState.windows.resume.isMinimized}
+      onminimize={handleMinimize}
+    >
+      <Resume />
+    </Window>
+  </MonitorFrame>
 </main>

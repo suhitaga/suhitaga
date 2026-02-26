@@ -15,6 +15,7 @@ interface AppState {
 	currentLayer: Layer;
 	windows: Record<WindowId, WindowState>;
 	highestZIndex: number;
+	monitorRevealed: boolean;
 }
 
 const initialState: AppState = {
@@ -26,6 +27,7 @@ const initialState: AppState = {
 		notebook: { id: 'notebook', isOpen: false, isMinimized: false, zIndex: 0 },
 	},
 	highestZIndex: 1,
+	monitorRevealed: false,
 };
 
 function createAppState() {
@@ -39,6 +41,7 @@ function createAppState() {
 			update((state) => ({
 				...state,
 				currentLayer: 'desktop',
+				monitorRevealed: true,
 				windows: {
 					...state.windows,
 					resume: { ...state.windows.resume, isMinimized: true },
@@ -115,3 +118,4 @@ export const appState = createAppState();
 // Derived stores for convenience
 export const currentLayer = derived(appState, ($state) => $state.currentLayer);
 export const windows = derived(appState, ($state) => $state.windows);
+export const monitorRevealed = derived(appState, ($state) => $state.monitorRevealed);
