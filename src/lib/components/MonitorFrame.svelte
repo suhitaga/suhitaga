@@ -11,18 +11,16 @@
       {@render children()}
     </div>
   </div>
-  <button
-    class="power-button"
-    class:visible={$monitorRevealed}
-    aria-label="Power"
-  >
-    <span class="power-icon-shadow" aria-hidden="true">
-      <Power size={25} weight="bold" />
-    </span>
-    <span class="power-icon">
-      <Power size={25} weight="bold" />
-    </span>
-  </button>
+  <div class="power-well" class:visible={$monitorRevealed}>
+    <button class="power-button" aria-label="Power">
+      <span class="power-icon-shadow" aria-hidden="true">
+        <Power size={25} weight="bold" />
+      </span>
+      <span class="power-icon">
+        <Power size={25} weight="bold" />
+      </span>
+    </button>
+  </div>
 </div>
 
 <style>
@@ -76,17 +74,41 @@
     height: var(--bezel-bottom);
   }
 
-  /* Power button — recessed into bezel */
-  .power-button {
+  /* Power well — gradient ring behind button */
+  .power-well {
     position: absolute;
     bottom: calc(var(--bezel-bottom) / 2);
     right: calc(var(--bezel-x) + 8px);
     transform: translateY(50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at center in oklch,
+      var(--power-button-bg) 20%,
+      var(--bezel-color) 75%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease-out 0.15s;
+  }
+
+  .power-well.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Power button — sits inside the well */
+  .power-button {
     width: 40px;
     height: 40px;
     border: none;
     border-radius: 50%;
-    outline: 5px solid var(--power-outline);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -96,17 +118,7 @@
     box-shadow:
       inset 1px 2px 3px oklch(0% 0 0 / 0.25),
       inset -1px -1px 2px oklch(100% 0 0 / 0.05);
-
-    opacity: 0;
-    pointer-events: none;
-    transition:
-      opacity 0.35s ease-out 0.15s,
-      box-shadow 0.15s ease;
-  }
-
-  .power-button.visible {
-    opacity: 1;
-    pointer-events: auto;
+    transition: box-shadow 0.15s ease;
   }
 
   .power-button:hover {

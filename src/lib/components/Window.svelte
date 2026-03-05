@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { X, Minus } from "phosphor-svelte";
+  import { X } from "phosphor-svelte";
   import type { Snippet } from "svelte";
   import "./Window.css";
 
@@ -51,9 +51,7 @@
         class="control minimize"
         onclick={onminimize}
         aria-label="Minimize window"
-      >
-        <Minus size={16} weight="bold" />
-      </button>
+      ></button>
     </div>
   </header>
   <div class="window-content">
