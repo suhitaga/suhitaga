@@ -3,11 +3,14 @@
   import { browser } from "$app/environment";
   import "./ScatteredHeader.css";
 
-  export let text: string;
-  export let isName: boolean = false;
-  export let palette: number = 0;
-  export let onpalettechange: ((palette: number) => void) | undefined =
-    undefined;
+  interface Props {
+    text: string;
+    isName?: boolean;
+    palette?: number;
+    onpalettechange?: (palette: number) => void;
+  }
+
+  let { text, isName = false, palette = 0, onpalettechange }: Props = $props();
 
   // Palette names matching CSS @font-palette-values
   const paletteNames = ["yellow", "green", "blue", "purple", "warm"];
@@ -28,8 +31,8 @@
     rotation: number;
   }
 
-  let letters: LetterPosition[] = [];
-  let isSafari = false;
+  let letters: LetterPosition[] = $state([]);
+  let isSafari = $state(false);
   let containerEl: HTMLDivElement;
 
   function generatePositions() {
@@ -71,8 +74,8 @@
     generatePositions();
   });
 
-  $: fontPalette = `--palette-${paletteNames[palette]}`;
-  $: currentColor = accentColors[palette];
+  let fontPalette = $derived(`--palette-${paletteNames[palette]}`);
+  let currentColor = $derived(accentColors[palette]);
 </script>
 
 <div
@@ -82,10 +85,10 @@
   bind:this={containerEl}
   style:font-palette={isSafari ? "normal" : fontPalette}
   style:color={isSafari ? currentColor : null}
-  on:mouseenter={handleInteractionStart}
-  on:mouseleave={handleInteractionEnd}
-  on:touchstart|preventDefault={handleInteractionStart}
-  on:touchend={handleInteractionEnd}
+  onmouseenter={handleInteractionStart}
+  onmouseleave={handleInteractionEnd}
+  ontouchstart={handleInteractionStart}
+  ontouchend={handleInteractionEnd}
   role="heading"
   aria-level={isName ? 1 : 2}
 >
