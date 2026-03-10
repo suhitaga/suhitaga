@@ -240,6 +240,13 @@
     stopProgressTracking();
     progressInterval = setInterval(() => {
       if (player && !isSeeking) {
+        // Detect ads: getVideoUrl() contains the video ID, during ads it differs
+        try {
+          const data = (player as any).getVideoData?.();
+          isAdPlaying = data?.isAd ?? false;
+        } catch {
+          isAdPlaying = false;
+        }
         currentTime = player.getCurrentTime?.() ?? 0;
         duration = player.getDuration?.() ?? 0;
         progress = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -283,6 +290,7 @@
 
   let shouldAutoplay = false;
   let skipCount = 0;
+  let isAdPlaying = $state(false);
 
   function loadTrack() {
     if (!player || !isReady || !tracks.length) return;
@@ -427,8 +435,12 @@
     <!-- Track info + controls -->
     <div class="player-body">
       <div class="track-info">
-        <span class="track-title" bind:this={titleEl}><span class="track-title-inner">{currentTrack?.title ?? "—"}</span></span>
-        <span class="track-artist" bind:this={artistEl}><span class="track-artist-inner">{currentTrack?.artist ?? ""}</span></span>
+        {#if isAdPlaying}
+          <span class="ad-label">ad</span>
+        {:else}
+          <span class="track-title" bind:this={titleEl}><span class="track-title-inner">{currentTrack?.title ?? "—"}</span></span>
+          <span class="track-artist" bind:this={artistEl}><span class="track-artist-inner">{currentTrack?.artist ?? ""}</span></span>
+        {/if}
       </div>
 
       <!-- Transport controls -->
@@ -578,6 +590,13 @@
     flex-direction: column;
     gap: 1px;
     min-width: 0;
+  }
+
+  .ad-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.2;
   }
 
   .track-title,
