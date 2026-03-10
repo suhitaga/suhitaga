@@ -19,7 +19,7 @@
 
 <button class="desktop-icon" {onclick} bind:this={buttonEl}>
   <div class="icon-wrapper">
-    <Icon size={48} weight="thin" />
+    <Icon size={48} weight="fill" />
   </div>
   <span class="label">{label}</span>
 </button>
@@ -33,15 +33,10 @@
     padding: 8px;
     background: none;
     border: none;
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
-    transition: background 0.15s ease;
     width: 88px;
     font-family: inherit;
-  }
-
-  .desktop-icon:hover {
-    background: var(--bg-elevated);
   }
 
   .desktop-icon:active {
@@ -55,6 +50,12 @@
     align-items: center;
     justify-content: center;
     color: var(--text-primary);
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+
+  .desktop-icon:hover .icon-wrapper {
+    background: var(--bg-elevated);
   }
 
   .label {
@@ -64,5 +65,12 @@
     word-break: break-word;
     line-height: 1.3;
     max-width: 80px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    transition: background 0.15s ease;
+  }
+
+  .desktop-icon:hover .label {
+    background: var(--bg-elevated);
   }
 </style>

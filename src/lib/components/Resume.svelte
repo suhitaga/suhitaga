@@ -38,6 +38,9 @@
   }
 
   $: mainColor = accentColors[mainPalette];
+  $: if (typeof document !== "undefined") {
+    document.documentElement.style.setProperty("--accent", mainColor);
+  }
 </script>
 
 <div class="resume" style:--accent={mainColor}>

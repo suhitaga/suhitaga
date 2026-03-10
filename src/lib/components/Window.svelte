@@ -69,6 +69,9 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: var(--screen-radius);
+    box-shadow: 0 4px 24px oklch(0% 0 0 / 0.3), 0 1px 4px oklch(0% 0 0 / 0.15);
     transform-origin: var(--fold-target-x, 68px) var(--fold-target-y, 80px);
     transition:
       transform 0.35s ease-out,

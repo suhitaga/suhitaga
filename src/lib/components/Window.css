@@ -47,12 +47,19 @@
 }
 
 .control.minimize {
+	position: relative;
 	width: 16px;
 	height: 16px;
 	border: 1.5px solid var(--border);
 	outline: 1.5px solid oklch(50% 0.02 70);
 	border-radius: 3px;
 	background: transparent;
+}
+
+.control.minimize::before {
+	content: "";
+	position: absolute;
+	inset: -12px;
 }
 
 .control.minimize:hover {

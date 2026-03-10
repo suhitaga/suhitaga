@@ -1,7 +1,10 @@
 <script lang="ts">
   import DesktopIcon from "./DesktopIcon.svelte";
+  import DesktopTray from "./DesktopTray.svelte";
+  import MusicPlayer from "./MusicPlayer.svelte";
   import { appState, monitorRevealed } from "$lib/stores/appState";
   import { ReadCvLogoIcon } from "phosphor-svelte";
+  import { playlistIds } from "$lib/data/playlist";
 
   let resumeIconEl: HTMLElement | null = $state(null);
   let desktopEl: HTMLElement | null = $state(null);
@@ -44,13 +47,19 @@
 </script>
 
 <div class="desktop" bind:this={desktopEl}>
-  <div class="icon-grid">
-    <DesktopIcon
-      label="resume"
-      icon={ReadCvLogoIcon}
-      onclick={openResume}
-      bind={(el) => (resumeIconEl = el)}
-    />
+  <div class="top-area">
+    <MusicPlayer videoIds={playlistIds} />
+  </div>
+
+  <div class="bottom-area">
+    <DesktopTray>
+      <DesktopIcon
+        label="resume"
+        icon={ReadCvLogoIcon}
+        onclick={openResume}
+        bind={(el) => (resumeIconEl = el)}
+      />
+    </DesktopTray>
   </div>
 </div>
 
@@ -59,15 +68,26 @@
     position: absolute;
     inset: 0;
     background: var(--bg-primary);
-    padding: 24px;
+    padding: 16px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
-  .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 88px);
-    grid-auto-rows: 100px;
-    gap: 8px;
-    align-content: start;
+  .top-area {
+    flex-shrink: 0;
+  }
+
+  .bottom-area {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 500px) {
+    .desktop {
+      padding: 10px;
+    }
   }
 </style>
