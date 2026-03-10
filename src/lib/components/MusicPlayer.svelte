@@ -406,7 +406,7 @@
 </div>
 
 <div class="music-player">
-  <div class="player-inner">
+  <div class="player-inner" style:--disc-color={discColor}>
     <!-- Album art / vinyl area + counter -->
     <div class="disc-col">
       <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -415,7 +415,6 @@
         class:spinning={isPlaying && !isScratching}
         class:scratching={isScratching}
         style:--scratch-rotation="{scratchRotation}deg"
-        style:--disc-color={discColor}
         bind:this={discEl}
         onmousedown={handleScratchStart}
         ontouchstart={handleScratchStart}
@@ -714,10 +713,11 @@
 
   .squiggle-fill {
     fill: none;
-    stroke: var(--accent-green);
+    stroke: var(--disc-color, var(--accent-green));
     stroke-width: 2;
     stroke-linecap: round;
-    filter: drop-shadow(0 0 2px var(--accent-green));
+    filter: drop-shadow(0 0 2px var(--disc-color, var(--accent-green)));
+    transition: stroke 0.3s ease, filter 0.3s ease;
   }
 
   .progress-knob {
@@ -751,8 +751,8 @@
     }
 
     .squiggle-fill {
-      stroke: var(--accent-orange);
-      filter: drop-shadow(0 0 2px var(--accent-orange));
+      stroke: var(--disc-color, var(--accent-orange));
+      filter: drop-shadow(0 0 2px var(--disc-color, var(--accent-orange)));
     }
 
     .player-inner {
