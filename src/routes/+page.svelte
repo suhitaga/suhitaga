@@ -73,7 +73,7 @@
     <Desktop />
 
     <Window
-      title="resume.md"
+      title="resume"
       isMinimized={$appState.windows.resume.isMinimized}
       onminimize={handleMinimize}
     >

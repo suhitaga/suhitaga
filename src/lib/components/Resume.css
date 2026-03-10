@@ -52,13 +52,79 @@
 	gap: 16px;
 }
 
-.contact-icons a {
+.social-link {
 	color: var(--accent);
-	transition: opacity 0.2s ease;
+	display: inline-flex;
+	transition: color 0.3s ease, transform 0.3s ease;
+	will-change: transform;
 }
 
-.contact-icons a:hover {
-	opacity: 0.7;
+/* Idle: each icon gently floats on its own rhythm */
+.social-linkedin {
+	animation: float-linkedin 3s ease-in-out infinite;
+}
+
+.social-github {
+	animation: spin-idle 6s linear infinite;
+}
+
+.social-email {
+	animation: float-email 2.5s ease-in-out infinite;
+}
+
+.social-twitter {
+	animation: wobble-idle 2s ease-in-out infinite;
+}
+
+/* Hover: each icon does something dramatic */
+.social-linkedin:hover {
+	animation: none;
+	transform: scale(1.4) rotate(-8deg);
+}
+
+.social-github:hover {
+	animation: spin-fast 0.5s linear infinite;
+}
+
+.social-email:hover {
+	animation: none;
+	transform: scale(1.3) translateY(-6px);
+}
+
+.social-twitter:hover {
+	animation: flap 0.3s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes float-linkedin {
+	0%, 100% { transform: translateY(0) rotate(0deg); }
+	50% { transform: translateY(-4px) rotate(3deg); }
+}
+
+@keyframes spin-idle {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-fast {
+	0% { transform: rotate(0deg) scale(1.3); }
+	100% { transform: rotate(360deg) scale(1.3); }
+}
+
+@keyframes float-email {
+	0%, 100% { transform: translateY(0) scale(1); }
+	50% { transform: translateY(-3px) scale(1.05); }
+}
+
+@keyframes wobble-idle {
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(8deg); }
+	75% { transform: rotate(-8deg); }
+}
+
+@keyframes flap {
+	0% { transform: rotate(-15deg) scale(1.3) translateY(-4px); }
+	100% { transform: rotate(15deg) scale(1.3) translateY(-4px); }
 }
 
 /* Sections */

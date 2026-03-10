@@ -1,7 +1,7 @@
 <script lang="ts">
   import DesktopIcon from "./DesktopIcon.svelte";
   import { appState, monitorRevealed } from "$lib/stores/appState";
-  import { FileMd } from "phosphor-svelte";
+  import { ReadCvLogoIcon } from "phosphor-svelte";
 
   let resumeIconEl: HTMLElement | null = $state(null);
   let desktopEl: HTMLElement | null = $state(null);
@@ -41,15 +41,13 @@
   function openResume() {
     appState.goToResume();
   }
-
-
 </script>
 
 <div class="desktop" bind:this={desktopEl}>
   <div class="icon-grid">
     <DesktopIcon
-      label="resume.md"
-      icon={FileMd}
+      label="resume"
+      icon={ReadCvLogoIcon}
       onclick={openResume}
       bind={(el) => (resumeIconEl = el)}
     />

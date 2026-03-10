@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Power } from "phosphor-svelte";
+  import { PowerIcon } from "phosphor-svelte";
   import { monitorRevealed } from "$lib/stores/appState";
 
   let { children } = $props();
@@ -14,10 +14,10 @@
   <div class="power-well" class:visible={$monitorRevealed}>
     <button class="power-button" aria-label="Power">
       <span class="power-icon-shadow" aria-hidden="true">
-        <Power size={25} weight="bold" />
+        <PowerIcon size={25} weight="bold" />
       </span>
       <span class="power-icon">
-        <Power size={25} weight="bold" />
+        <PowerIcon size={25} weight="bold" />
       </span>
     </button>
   </div>

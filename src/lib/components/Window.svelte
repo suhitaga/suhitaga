@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { X } from "phosphor-svelte";
+  import { XIcon } from "phosphor-svelte";
   import type { Snippet } from "svelte";
   import "./Window.css";
 
@@ -44,7 +44,7 @@
           onclick={onclose}
           aria-label="Close window"
         >
-          <X size={16} weight="bold" />
+          <XIcon size={16} weight="bold" />
         </button>
       {/if}
       <button

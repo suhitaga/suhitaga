@@ -2,7 +2,12 @@
   import { resumeData } from "$lib/data/resume";
   import ScatteredHeader from "./ScatteredHeader.svelte";
   import Entry from "./Entry.svelte";
-  import { LinkedinLogo, GithubLogo, Envelope, XLogo } from "phosphor-svelte";
+  import {
+    LinkedinLogoIcon,
+    GithubLogoIcon,
+    EnvelopeIcon,
+    XLogoIcon,
+  } from "phosphor-svelte";
   import "./Resume.css";
 
   const accentColors = [
@@ -50,31 +55,38 @@
       </div>
       <nav class="contact-icons">
         <a
+          class="social-link social-linkedin"
           href="https://linkedin.com/in/suhitaga"
           target="_blank"
           rel="noopener"
           aria-label="LinkedIn"
         >
-          <LinkedinLogo size={24} weight="duotone" />
+          <LinkedinLogoIcon size={24} weight="duotone" />
         </a>
         <a
+          class="social-link social-github"
           href="https://github.com/suhitaga"
           target="_blank"
           rel="noopener"
           aria-label="GitHub"
         >
-          <GithubLogo size={24} weight="duotone" />
-        </a>
-        <a href="mailto:suhit@suhit.me" aria-label="Email">
-          <Envelope size={24} weight="duotone" />
+          <GithubLogoIcon size={24} weight="duotone" />
         </a>
         <a
-          href="https://twitter.com/suhitdoingstuff"
+          class="social-link social-email"
+          href="mailto:suhit@suhit.me"
+          aria-label="Email"
+        >
+          <EnvelopeIcon size={24} weight="duotone" />
+        </a>
+        <a
+          class="social-link social-twitter"
+          href="https://x.com/suhitaga"
           target="_blank"
           rel="noopener"
           aria-label="Twitter"
         >
-          <XLogo size={24} weight="duotone" />
+          <XLogoIcon size={24} weight="duotone" />
         </a>
       </nav>
     </header>
