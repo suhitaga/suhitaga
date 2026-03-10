@@ -88,6 +88,11 @@
   @media (max-width: 500px) {
     .desktop {
       padding: 10px;
+      flex-direction: column-reverse;
+    }
+
+    .bottom-area {
+      align-items: flex-start;
     }
   }
 </style>
